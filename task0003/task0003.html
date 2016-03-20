@@ -8,46 +8,51 @@
 	div{border: 2px solid #999;padding: 20px;margin: 20px;}
 	.main{background-color: #eee;height: 500px;position: relative;}
 	.bgc{background-color: #fff;}
-	.main-logo{width: 200px;float: left;}
+	.main-logo{width: 200px;float: left;text-align: center;}
 	.main-content{position: absolute;left: 280px;right: 180px;}
+	.main-content p{line-height: 30px;text-indent: 2em;}
 	.main-photo{width: 120px;position: absolute;right: 0;}
-	.main-photo img{width: 80px;height: 80px;}
-	header{height: 30px;background-color: #fc0;line-height: 30px;}
-	footer{height: 20px;background-color: #fc0;}
+	.main-photo img{display: block;width: 80px;height: 80px;margin: 20px;}
+	.headfoot{height: 30px;background-color: #fc0;line-height: 30px;text-align: center;}
+	
+	blockquote{text-align: center;color: gray;font-size: 14px;line-height: 24px;}
+	@media screen and (max-width: 900px){
+		.main{
+			width: 850px;
+		}
+	}
 	</style>
 </head>
 <body>
 	<div class="main">
 		<div class="bgc main-logo">
 			<figure>
-				<figcaption>蜗牛爬爬</figcaption>
-				<img src="../images/food.jpg" width="150px" height="180px">
+				<figcaption><b>蜗牛爬爬</b></figcaption>
+				<img src="../images/teamlogo.jpeg" width="150px" height="180px">
 			</figure>			
 		</div>
 		<div class="bgc main-content">
 			<article>
-				<header>
-					大家好，我们是蜗牛爬爬团队！
+				<header class="headfoot">
+					大家好，我们是蜗牛爬爬~
 				</header>
-				<p>该不该搁下重重的壳 &nbsp寻找到底哪里有蓝天
-				历经的伤都不感觉疼&nbsp我要一步一步往上爬
-				等待阳光静静看着它的脸 &nbsp小小的天有大大的梦想
-				重重的壳裹着轻轻地仰望&nbsp我要一步一步往上爬
-				在最高点乘着叶片往前飞&nbsp小小的天流过的泪和汗
-				总有一天我有属于我的天&nbsp我要一步一步往上爬
-				在最高点乘着叶片往前飞&nbsp任风吹干流过的泪和汗<br>
-				我要一步一步往上爬&nbsp等待阳光静静看着它的脸<br>
-				小小的天有大大的梦想&nbsp我有属于我的天<br>
-				任风吹干流过的泪和汗&nbsp总有一天我有属于我的天</p>
-				<footer class="">
-					蜗牛爬爬©
+				<p>我们是来自北京交通大学的一支前端小队伍，因为喜欢爬行者蜗牛的品格，所以小队长（也就是我啦）在起名字的时候灵光一闪，嗯，就这个了——蜗牛爬爬。“我要一步一步往上爬”，好似我们自学前端的过程，每一点知识的积累每一次眼界的开阔，让我们意识到眼前所掌握的技术也仅是冰山一角，只有努力努力再努力。值得高兴的是，在学习前端的过程中我找到了自己喜欢做的事情。感谢baidu-ife。</p><br>
+
+				<blockquote>
+					我要一步一步往上爬&nbsp&nbsp&nbsp&nbsp等待阳光静静看着它的脸<br>
+					小小的天有大大的梦想&nbsp&nbsp&nbsp&nbsp我有属于我的天<br>
+					任风吹干流过的泪和汗&nbsp&nbsp&nbsp&nbsp总有一天我有属于我的天
+				</blockquote>
+				
+				<footer class="headfoot">
+					爬爬© QQ 983793660 欢迎小伙伴们技术交流
 				</footer>
 			</article>		
 		</div>
 		<div class="bgc main-photo">
-			<img src="../images/food.jpg">
-			<img src="../images/food.jpg">
-			<img src="../images/food.jpg">
+			<img src="../images/chunxiao.jpg">
+			<img src="../images/haiyang.jpg">
+			<img src="../images/jiaping.jpg">
 		</div>
 	</div>
 </body>
