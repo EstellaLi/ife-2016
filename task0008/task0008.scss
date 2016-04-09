@@ -1,0 +1,39 @@
+$divheight:50px;
+$bordercolor:#999;
+$margin:10px;
+$backcolor:#eee;
+
+@mixin generate($flag){
+  @if($flag){
+    @for $i from 1 to 13{
+      .col-md-#{$i}{
+        width: 100% / 12 * $i;
+      }
+    }
+  } @else{
+    @for $i from 1 to 13{
+      .col-sm-#{$i}{
+        width: 100% / 12 * $i;
+      }
+    }
+  }
+}
+@media screen and (min-width:769px){
+  @include generate(true);
+}
+@media screen and (max-width:768px){
+  @include generate(false);
+}
+*{
+  padding:0;
+  margin:0;
+}
+.out{
+  float:left;
+}
+.in{
+  height:$divheight;
+  background-color:$backcolor;
+  border:1px solid $bordercolor;
+  margin:$margin;
+}
