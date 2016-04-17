@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task18</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="task19.js"></script>
+	<style type="text/css">
+	
+	#btn-group{
+		display: inline;
+	}
+	#show{
+		position: relative;
+		width: 1200px;
+		height: 250px;
+		overflow: hidden;
+	}
+	#show div{
+		position: absolute;
+		bottom: 0;
+		color: #fff;
+		background-color: red;
+		
+		
+	}
+	</style>
+</head>
+<body>
+<div class="main">
+	<div class="">
+		<input id="num" type="text" placeholder="请输入10至100之间的整数"></input>
+		<div id="btn-group">
+			<button data-action = "leftin">左侧入</button>
+			<button data-action = "rightin">右侧入</button>
+			<button data-action = "leftout">左侧出</button>
+			<button data-action = "rightout">右侧出</button>
+			<button data-action = "list">排序</button>
+			
+		</div>
+	</div>
+	<div id="show">
+</div>
+</div>
+</body>
+</html>
