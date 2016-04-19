@@ -16,18 +16,18 @@ var $ = function(element){
 }
 
 var event = {
-	leftin: function(item){
+	leftIn: function(item){
 		dataArr.unshift(item); //向数组开头加一个／多个元素，返回新长度
 	},
-	rightin: function(item){
+	rightIn: function(item){
 		dataArr.push(item);    //向数组末尾加一个／多个元素，返回新长度
 	},
-	leftout: function(){
+	leftOut: function(){
 		if(dataArr.length > 0){
 			dataArr.shift(); //删除并返回数组的第一个元素
 		}
 	},
-	rightout: function(){
+	rightOut: function(){
 		if(dataArr.length > 0){
 			dataArr.pop();  //删除并返回数组的最后一个元素
 		}

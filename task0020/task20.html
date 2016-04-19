@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>task18</title>
+	<title>task20</title>
 	<meta charset="utf-8">
-	<script type="text/javascript" src="task18_2.js"></script>
+	<script type="text/javascript" src="task20.js"></script>
 	<style type="text/css">
+	#num{
+		height: 60px;width: 180px;
+	}
 	#btn-group{
 		display: inline;
 	}
@@ -20,17 +23,22 @@
 		padding: 10px
 		
 	}
+	.selected {
+		color: black;
+	}
 	</style>
 </head>
 <body>
 <div>
-	<input id="num" type="text" placeholder="请输入数字"></input>
+	<textarea id="data" placeholder="格式可以为数字/中文/英文等，可以通过用回车/逗号（全角半角均可）/顿号/空格（全角半角、Tab等）等符号作为不同内容的间隔"></textarea>
 	<div id="btn-group">
 		<button data-action = "leftIn">左侧入</button>
 		<button data-action = "rightIn">右侧入</button>
 		<button data-action = "leftOut">左侧出</button>
 		<button data-action = "rightOut">右侧出</button>
+		<button data-action = "search">查询</button>
 	</div>
+	<input id="searchInput" type="text" placeholder="输入查询字符"></input>
 </div>
 <div id="show">
 	
