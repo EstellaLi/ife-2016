@@ -39,7 +39,8 @@ var action = {
 	},
 	
 	delCurrent: function(arr, index){
-		arr.splice(index, 1);
+		if(index)
+			arr.splice(index, 1);
 	},
 	//冒泡排序
 	poplist: function(arr, arrset){
@@ -56,7 +57,7 @@ var action = {
 	},
 	list: function(arr, arrset){
 		action["poplist"](arr, arrset);
-		var timer = setInterval(paint, 1000);
+		var timer = setInterval(paint, 500);
 		function paint(){
 			var current = arrset.shift();
 			if(arrset.length >= 0){
