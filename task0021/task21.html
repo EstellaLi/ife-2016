@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task21</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src = "task21.js"></script>
+	<style type="text/css">
+	#main {
+		padding-top: 20px;
+		padding-left: 20px;
+	}
+	.show {
+		overflow: auto;
+	}
+	.show div {
+		float: left;
+		margin: 15px 10px 15px 0;
+		color: white;
+		font-size: 24px;
+		line-height: 26px;
+	}
+	#tagShow div {
+		background-color: #78BCFB;
+	}
+	#hobbyShow div {
+		background-color: orange;
+	}
+	.select {
+		background-color: red;
+	}
+	/*textarea {
+		display: block;
+		margin-top: 50px;
+	}*/
+	</style>
+</head>
+<body>
+	<div id = "main">
+		Tag: <input type="text" id="tagInpt"></input>
+		<div class="show" id="tagShow"></div>
+		<textarea id="hobbyInpt"></textarea>
+		<input type="button" value="确认兴趣爱好" id = "hobbyBtn"></input>
+		<div class="show" id="hobbyShow"></div>
+	</div>
+</body>
+</html>
