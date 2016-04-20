@@ -45,7 +45,7 @@ Act.prototype.inQueue = function(item) {
 	// body...
 	item = Array.prototype.concat(item); //new array
 	for (var i = 0; i < item.length; i++) {
-		if(!this.queue.includes(item[i])) {
+		if(!this.queue.includes(item[i]) && item[i] !== "") {
 			if(this.queue.length >= this.maxLen){
 				this.queue.shift();
 			}
