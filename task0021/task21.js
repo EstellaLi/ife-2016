@@ -98,7 +98,7 @@ var init = function(){
 		var e = event.target || event.srcElement;
 		if(e.dataset.index !== undefined) {
 			
-			e.classname += " select";//e.style["background-color"] = "red";
+			e.style["background-color"] = "red"; //e.className += " select";
 			e.innerHTML = "点击删除" + e.innerHTML;
 		}
 	});
@@ -106,7 +106,7 @@ var init = function(){
 	addListener($(tag.domShowId), "mouseout", function(){
 		var e = event.target || event.srcElement;
 		if(e.dataset.index !== undefined) {
-			e.className -=" select";
+			e.style["background-color"] = "#78BCFB";//e.className -=" select";
 			e.innerHTML = e.innerHTML.toString().substring(4);
 		}
 	});
