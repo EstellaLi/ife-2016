@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task23</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="task23.js"></script>
+	<style type="text/css">
+
+	div {
+		display: -webkit-flex;
+		display: flex;
+		width: 1000px;
+		height: 500px;
+		border: 1px solid;
+		margin: auto;
+		flex-direction: row;
+		justify-content: space-around;
+		background-color: white;
+	}
+	.container div{
+		height: 80%;
+		width: 30%;
+	}
+	.btn-group {
+		height: 30px;
+		border: none;
+		margin-bottom: 10px;
+	}
+	.active {
+		background-color: #78BCFB;
+	}
+	
+	</style>
+</head>
+<body>
+	<div class="btn-group">
+		<button data-order = "DFS">深度优先</button>
+		<button data-order = "BFS">广度优先</button>
+		
+		<input type="input" id = "searchInput"></input>
+	</div>
+
+	<div class="container">
+	A
+		<div>
+		B1
+			<div>
+				<div>C1</div>
+				<div>C2</div>
+			</div>
+			<div>
+				<div>C3</div>
+				<div>C4</div>
+			</div>
+		</div>
+			
+		<div>
+		B2
+			<div>
+				<div>C5</div>
+				<div>C6</div>
+			</div>
+			<div>
+				<div>C7</div>
+			</div>
+		</div>
+		<div>
+		B3
+			<div>C8</div>
+			<div>C9</div>
+			<div>C10</div>
+		</div>
+	</div>
+
+</body>
+</html>
