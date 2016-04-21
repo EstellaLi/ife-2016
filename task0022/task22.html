@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task22</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="task22.js"></script>
+	<style type="text/css">
+
+	div {
+		display: -webkit-flex;
+		display: flex;
+		width: 800px;
+		height: 500px;
+		border: 1px solid;
+		margin: auto;
+		flex-direction: row;
+		justify-content: space-around;
+		background-color: white;
+	}
+	.container div{
+		height: 80%;
+		width: 40%
+	}
+	.btn-group {
+		height: 30px;
+		border: none;
+		margin-bottom: 10px;
+	}
+	.active {
+		background-color: #78BCFB;
+	}
+	</style>
+</head>
+<body>
+	<div class="btn-group">
+		<button data-order = "preOrder">前序</button>
+		<button data-order = "inOrder">中序</button>
+		<button data-order = "postOrder">后序</button>
+	</div>
+	<div class="container">
+		<div>
+			<div>
+				<div></div>
+				<div></div>
+			</div>
+			<div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+			
+		<div>
+			<div>
+				<div></div>
+				<div></div>
+			</div>
+			<div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
