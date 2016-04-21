@@ -41,6 +41,7 @@ var aqiSourceData = {
   "厦门": randomBuildData(100),
   "沈阳": randomBuildData(500)
 };
+var colors = ['#16324a', '#24385e', '#393f65', '#edae9e', '#9ea7bb', '#d7f0f8', '#78BCFB'];
 
 var $ = function(eleId){
   return document.getElementById(eleId);
@@ -76,7 +77,8 @@ function renderChart() {
 
   var inner = "", i = 1;
   for(var eachDay in drawData){
-    inner += "<div class='aqi' style='width:"+ perWidth + "px; height: " + drawData[eachDay] + "px; left:" + (2 * i - 1) * perWidth + "px; background-color:red;'></div>";
+    inner += "<div class='aqi' style='width:"+ perWidth + "px; height: " + drawData[eachDay] + "px; left:" + (2 * i - 1) * perWidth + "px; background-color:"+ colors[Math.floor(Math.random()*7)] +";'></div>";
+    
     inner += "<div class='hint' style=' bottom: "+ (drawData[eachDay] + 10)+"px; left:" +  ((2 * i - 1) * perWidth - 20)+ "px;'>"+ eachDay+":" + drawData[eachDay]+"</div>";
     i++;
   }
@@ -153,26 +155,25 @@ function initAqiChartData() {
   // 将原始的源数据处理成图表需要的数据格式
   // 处理好的数据存到 chartData 中
   chartData["day"] = aqiSourceData;
-  var weekAqi={}, monthAqi={};
+  // var weekAqi={}, monthAqi={};
 
-  for(var city in aqiSourceData){
-  	var dayCityAqi = aqiSourceData[city]; //获得当前城市的日aqi列表
+  // for(var city in aqiSourceData){
+  // 	var dayCityAqi = aqiSourceData[city]; //获得当前城市的日aqi列表
 
-  	var keyArray = Object.getOwnPropertyNames(dayCityAqi); //获取对象自定义属性
+  // 	var keyArray = Object.getOwnPropertyNames(dayCityAqi); //获取对象自定义属性
 
-  	var monthList = new Object(); 
+  // 	var monthList = new Object(); 
 
-  	for(var i = 0; i < keyArray.length; i++){
-  		var month = keyArray[i].slice(5, 7); //获取当前月份值
-  		if(!monthList.hasOwnProperty('month')){
-  			monthList[month] += dayCityAqi[keyArray[i]]; //
-  		}
+  // 	for(var i = 0; i < keyArray.length; i++){
+  // 		var month = keyArray[i].slice(5, 7); //获取当前月份值
+  // 		if(!monthList.hasOwnProperty('month')){
+  // 			monthList[month] += dayCityAqi[keyArray[i]]; //
+  // 		}
 
-  	}
+  // 	}
 
-  }
-  renderChart();
-
+  // }
+    renderChart();
 }
 
 /**
