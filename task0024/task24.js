@@ -14,7 +14,7 @@ var travelBTree = function(node){
 	
 }
 //深度优先
-travelBTree.prototype.DFS = function(node) {
+travelBTree.prototype.deepFS = function(node) {
 	this.travelList.push(node);
 	for (var i = 0; i < node.children.length; i++) {
 		if (node.children[i] !== null) {
@@ -23,7 +23,7 @@ travelBTree.prototype.DFS = function(node) {
 	}
 };
 //广度优先
-travelBTree.prototype.BFS = function(node) {
+travelBTree.prototype.breadthFS = function(node) {
 	// body...
 	var queue =[];
 	queue.push(node);
@@ -41,6 +41,16 @@ travelBTree.prototype.BFS = function(node) {
 			}
 		}
 	}	
+};
+travelBTree.prototype.insertNode = function(parnode,content) {
+	// body...
+	var div = document.createElement("div");
+	div.appendChild(document.createTextNode(content));
+	parnode.appendChild(div);
+};
+travelBTree.prototype.removeNode = function(node) {
+	// body...
+	node.parentNode.removeChild(node);
 };
 travelBTree.prototype.antimate = function(search) {
 	// body...
@@ -72,18 +82,49 @@ var $ = function(element) {
 }
 
 var init = function() {
-	
-	addListener($(".btn-group"), "click", function(){
+	var tree1 = new travelBTree($(".container"));
+	var search = $("#searchInput").value.trim();
+
+
+	addListener($(".btn-fs"), "click", function(){
 		var e = event.target || event.srcElement;
 		if(e.dataset.order !== undefined) {
-			var tree1 = new travelBTree($(".container"));
-			var search = $("#searchInput").value.trim();
-
 			tree1.travelList = [];
 			tree1[e.dataset.order](tree1.node);
 			tree1.antimate(search);
 		}
 	});
+
+	var choosen = null;
+	addListener($(".container"), "click", function(){
+		var e = event.target || event.srcElement;
+		if(choosen !== null) {
+			choosen.style["background-color"] = "white";
+		}
+		if(e.style["background-color"] !== "orange") {
+			e.style["background-color"] = "orange";
+			choosen = e;
+		}
+	});
+	addListener($(".btn-dm"), "click", function(){
+		var e = event.target || event.srcElement;
+		if (e.dataset.dm !== undefined) {
+			if(choosen !== null){
+				var content = $("#insertInput").value.trim();
+				switch(e.dataset.dm){
+					case "insert":
+						tree1.insertNode(choosen, content);
+						break;
+					case "delete":
+						tree1.removeNode(choosen);
+						break;
+				}
+			}
+			
+		}
+
+	});
+
 
 }
 

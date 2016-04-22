@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>task23</title>
+	<title>task24</title>
 	<meta charset="UTF-8">
 	<script type="text/javascript" src="task24.js"></script>
 	<style type="text/css">
@@ -21,7 +21,7 @@
 		height: 80%;
 		width: 30%;
 	}
-	.btn-group {
+	.btn-fs {
 		height: 30px;
 		border: none;
 		margin-bottom: 10px;
@@ -33,42 +33,46 @@
 	</style>
 </head>
 <body>
-	<div class="btn-group">
-		<button data-order = "DFS">深度优先</button>
-		<button data-order = "BFS">广度优先</button>
-		
-		<input type="input" id = "searchInput"></input>
+	<div class="btn-fs">
+		<button data-order = "deepFS">深度优先</button>
+		<input type="input" id = "searchInput" placeholder="搜索值输入"></input>
+		<button data-order = "breadthFS">广度优先</button>
+	</div>
+	<div class="btn-fs btn-dm">
+		<button data-dm = "insert">插入节点</button>
+		<input type="input" id = "insertInput" placeholder="插入值输入"></input>
+		<button data-dm = "delete">删除节点</button>
 	</div>
 
 	<div class="container">
 	A
 		<div>
 		B1
-			<div>
-				<div>C1</div>
-				<div>C2</div>
+			<div>C1
+				<div>D1</div>
+				<div>D2</div>
 			</div>
-			<div>
-				<div>C3</div>
-				<div>C4</div>
+			<div>C2
+				<div>D3</div>
+				<div>D4</div>
 			</div>
 		</div>
 			
 		<div>
 		B2
-			<div>
-				<div>C5</div>
-				<div>C6</div>
+			<div>C3
+				<div>D5</div>
+				<div>D6</div>
 			</div>
-			<div>
-				<div>C7</div>
+			<div>C4
+				<div>D7</div>
 			</div>
 		</div>
 		<div>
 		B3
+			<div>C7</div>
 			<div>C8</div>
 			<div>C9</div>
-			<div>C10</div>
 		</div>
 	</div>
 
