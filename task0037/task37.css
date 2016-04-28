@@ -1,0 +1,14 @@
+.main {
+	width: 800px;
+	margin: 0 auto;
+	line-height: 40px;
+	background-color: #ccc;
+}
+.mask {
+	width: 200px;
+	height: 150px;
+	position: fixed;
+	left: 200px;top: 50px;
+	border: 1px solid green;
+	background: #fff;
+}
