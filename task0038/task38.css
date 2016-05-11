@@ -1,0 +1,16 @@
+table {width: 800px;margin: 0 auto;text-align: center;font-family: sans-serif;line-height: 30px;margin-top: 50px;border-collapse: collapse;}
+table thead {background-color: rgba(0, 0, 0, 0.6);color: #fff;}
+table, th, td {border: 1px solid #ccc;}
+tbody tr:nth-child(even){background-color: rgba(204, 204, 204, 0.5);}
+span {display: inline-block;width: 0;height: 0;}
+.desc {
+	border-top: 10px solid white;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+.asc {
+	border-bottom: 10px solid white;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	margin-left: 5px;
+}
