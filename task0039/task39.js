@@ -21,7 +21,7 @@ var TableTool = (function() {
 			if(rect.top <= 0){
 				nowHead.style.position = "fixed";
 				nowHead.style.top = 0;
-				nowHead.style.left = rect.left;
+				//nowHead.style.left = rect.left;
 			}
 			else {
 				$(this.id+" thead").style.position = "static";
