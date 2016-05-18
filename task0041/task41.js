@@ -6,22 +6,21 @@ var DateTool = (function() {
 		t.bindListener();
 		return t;
 	}
-
 	function DatePick(obj) {
 		this.id = obj.id;
 		this.earlyDate = obj.earlyDate || "";
 		this.latestDate = obj.latestDate || "";
 		this.initDate = obj.initDate || "";
 		this.sEle = null;
+		this.selCallFunction = null;
 	}
 	DatePick.prototype = {
-		init: function() {
-			this.renderHeadWeek();
-			this.renderDate(this.initDate);
-			this.bindListener();
-		},
 		week: ['日', '一', '二', '三', '四', '五', '六'],
 		dateCount: 42,
+		selCall: function(fn){
+			this.selCall = fn;
+		},
+		//根据dom元素e，返回e对应的选择日期
 		getSelDate: function(e) {
 			var ymd = e.dataset.ymd.split("-"); //e为当前选中元素
 			ymd = new Date(ymd[0], ymd[1] - 1, ymd[2]); //当前的选择日期
@@ -29,7 +28,7 @@ var DateTool = (function() {
 		},
 		setSelDate: function(e) {
 			var ymd = this.getSelDate(e); //当前的选择日期
-			if(ymd < this.earlyDate || ymd > this.latestDate) {
+			if (ymd < this.earlyDate || ymd > this.latestDate) {
 				alert("expire");
 				return;
 			}
@@ -37,7 +36,6 @@ var DateTool = (function() {
 			var ymdOld = this.getSelDate(this.sEle); //上次被选择的日期
 			if (ymd.getMonth() === ymdOld.getMonth()) {
 				$(e).toggleClass("select");
-				document.querySelector(this.id+ " p").childNodes[2].textContent = ymd.getFullYear()+"年"+(ymd.getMonth()+1)+"月";
 				this.sEle = e;
 			} else {
 				this.renderDate(ymd);
@@ -48,22 +46,27 @@ var DateTool = (function() {
 			$(self.id + " div").click(function(e) {
 				var e = e.target || e.srcElement;
 				if (e.nodeName === "SPAN") {
-					self.setSelDate(e); 
+					self.setSelDate(e);
+					self.selCall(); //回调函数执行
 					$("#dateText").val(self.sEle.dataset.ymd);
 				}
-				event.stopPropagation();
 			});
 			$(self.id + " div.left-arrow").click(function(e) {
 				var ymd = self.getSelDate(self.sEle);
 				ymd.setMonth(ymd.getMonth() - 1);
 				self.renderDate(ymd);
-				event.stopPropagation();
 			});
 			$(self.id + " div.right-arrow").click(function(e) {
 				var ymd = self.getSelDate(self.sEle);
 				ymd.setMonth(ymd.getMonth() + 1);
 				self.renderDate(ymd);
-				event.stopPropagation();
+			});
+			$("#dateText").on("click", function() {
+				if ($(d1.id).css("display") === "none") {
+					$(d1.id).css("display", "block"); //$().show()
+				} else {
+					$(d1.id).css("display", "none");
+				}
 			});
 		},
 		renderHeadWeek: function() {
@@ -108,8 +111,8 @@ var DateTool = (function() {
 			}
 			$(this.id + ">div").html(str);
 			ymd = this.getDateString(dtSelect);
-			document.querySelector(this.id+ " p").childNodes[2].textContent = dtSelect.getFullYear() + "年" + (dtSelect.getMonth() + 1)+"月";
-			this.sEle = $(this.id + " .select")[0] || $(this.id + " span[data-ymd='"+ymd+"']")[0];
+			document.querySelector(this.id + " p").childNodes[2].textContent = dtSelect.getFullYear() + "年" + (dtSelect.getMonth() + 1) + "月";
+			this.sEle = $(this.id + " .select")[0] || $(this.id + " span[data-ymd='" + ymd + "']")[0];
 		},
 		getDateString: function(date) {
 			return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
@@ -124,14 +127,6 @@ var d1 = DateTool({
 	earlyDate: new Date(2016, 4),
 	latestDate: new Date(2016, 8, 15),
 });
-$("#dateText").on("click", function(){
-	if($(d1.id).css("display") === "none"){
-		$(d1.id).css("display", "block"); //$().show()
-	} else {
-		$(d1.id).css("display", "none");
-	}
-	event.stopPropagation();
-});
-$(document).on("click", function(){
-	$(d1.id).css("display", "none");
+d1.selCall(function(){
+	alert(this.sEle.dataset.ymd);
 })
