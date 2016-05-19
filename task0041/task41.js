@@ -8,9 +8,9 @@ var DateTool = (function() {
 	}
 	function DatePick(obj) {
 		this.id = obj.id;
-		this.earlyDate = obj.earlyDate || "";
-		this.latestDate = obj.latestDate || "";
-		this.initDate = obj.initDate || "";
+		this.earlyDate = obj.earlyDate || new Date(1970);
+		this.latestDate = obj.latestDate || new Date(2020);
+		this.initDate = obj.initDate || new Date();
 		this.sEle = null;
 		this.selCallFunction = null;
 	}

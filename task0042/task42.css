@@ -1,0 +1,17 @@
+*{margin: 0;padding:0;}
+.container{width: 400px; height: 400px; margin:50px auto;}
+.container input {width:350px;}
+.calender{width:350px; border:1px solid #ccc;margin-top: 10px;display: none;}
+.calender>div:before, .calender>div:after {content: "";clear: both;display: block;}
+p {background-color: #f00;height:50px;color:#fff;text-align: center;line-height: 50px;}
+p div{width: 0;height: 0; margin-top: 20px;border-top: 5px solid transparent; border-bottom: 5px solid transparent;cursor: pointer;}
+p .left-arrow {float: left;margin-left: 10px;border-right: 10px solid #fff;}
+p .right-arrow {float: right;margin-right: 10px;border-left: 10px solid #fff;}
+
+span {color: #848484; width: 50px; height: 50px;float: left;line-height: 50px;text-align: center;}
+div span{cursor: pointer;}
+span.red {color: #f00;}
+span.ccc {color: #ccc;}
+span.unreachable {background-color: lightyellow;cursor: default;}
+span.select {background-color: #f00; color:#fff;}
+span.dateperiod {background-color: rgba(255, 0, 0, 0.1);}
